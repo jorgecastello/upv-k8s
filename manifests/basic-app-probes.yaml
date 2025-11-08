@@ -20,10 +20,12 @@ spec:
       containers:
       - name: basic-app
         image: docker.io/jorgecastello/basic-microservice:temurin
-        imagePullPolicy: Always
         env:
         - name: SPRING_APPLICATION_NAME
           value: "upv-service"
+        envFrom:
+        - secretRef:
+          name: db-secret
         resources:
           requests:
             memory: "64Mi"
