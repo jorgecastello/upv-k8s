@@ -25,7 +25,7 @@ spec:
           value: "upv-service"
         envFrom:
         - secretRef:
-          name: db-secret
+            name: db-secret
         resources:
           requests:
             memory: "64Mi"
