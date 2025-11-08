@@ -19,7 +19,7 @@ spec:
       serviceAccountName: basic-app-sa
       containers:
       - name: basic-app
-        image: docker.io/jorgecastello/basic-microservice:chiseled
+        image: docker.io/jorgecastello/basic-microservice:temurin
         imagePullPolicy: Always
         env:
         - name: SPRING_APPLICATION_NAME
