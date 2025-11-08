@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: basic-app-sm
+spec: 
+  endpoints:
+    - interval: 15s
+      port: http
+      scrapeTimeout: 15s
+      path: /actuator/prometheus
+  namespaceSelector:
+    matchNames:
+      - upv-demo-service
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: basic-app
