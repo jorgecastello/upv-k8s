@@ -8,9 +8,6 @@ spec:
       port: http
       scrapeTimeout: 15s
       path: /actuator/prometheus
-  namespaceSelector:
-    matchNames:
-      - upv-demo-service
   selector:
     matchLabels:
       app.kubernetes.io/name: basic-app
