@@ -46,6 +46,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: SPRING_APPLICATION_NAME
+              value: {{ include "springboot-helm-chart.fullname" . }}
           envFrom:
             {{- range .Values.secretRef }}
             - secretRef: 
