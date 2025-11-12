@@ -27,8 +27,8 @@ spec:
     - host: {{ .host | quote }}
       http:
         paths:
-          - path: {{ .path }}
-            pathType: {{ .pathType }}
+          - path: {{ .path | quote }}
+            pathType: {{ .pathType | quote }}
             backend:
               service:
                 name: {{ $fullName }}
